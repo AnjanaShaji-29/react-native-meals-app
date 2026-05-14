@@ -4,6 +4,7 @@ import MealsOverview from "./screens/MealsOverview";
 import MealDetailScreen from "./screens/MealDetailScreen";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import FavoritesContextProvider from "./store/context/favorites-context";
 // import { Button } from "react-native";
 // import { createDrawerNavigator } from "@react-navigation/drawer";
 // import FavoritesScreen from "./screens/FavoritesScreen";
@@ -54,6 +55,7 @@ export default function App() {
   return (
     <>
       <StatusBar style="light" />
+      <FavoritesContextProvider> 
       <NavigationContainer>
         <Stack.Navigator
           screenOptions={{
@@ -95,6 +97,7 @@ export default function App() {
           />
         </Stack.Navigator>
       </NavigationContainer>
+      </FavoritesContextProvider>
     </>
   );
 }
